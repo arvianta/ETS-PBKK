@@ -32,7 +32,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/create-rekam-medis', [RekamMedisController::class, 'viewCreate'])->name('rekam-medis.create');
     Route::post('/add-rekam-medis', [RekamMedisController::class, 'create'])->name('rekam-medis.add');
 
-        
+    // mas and/or pak, saya gabisa frontend sama sekali mohon maaf mohon dimaafkan:(
 });
 
 Route::middleware('auth')->group(function () {
