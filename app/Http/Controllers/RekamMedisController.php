@@ -32,7 +32,7 @@ class RekamMedisController extends Controller
 
         Rekam_Medis::create($validatedData);
 
-        return redirect()->route('dashboard.create-medis')->with('success', 'Rekam Medis tercatat');
+        return redirect()->route('dashboard.create-medis')->with('success', 'Berhasil');
     }
 
     public function viewAll()

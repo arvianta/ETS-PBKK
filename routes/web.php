@@ -26,11 +26,13 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     })->name('dashboard');
 
     Route::get('/rekam-medis', [RekamMedisController::class, 'getAllPaginated'])->name('rekam-medis.list');
-    Route::get('/rekam-medis-pasien', [RekamMedisController::class, 'viewMedisPasien'])->name('rekam-medis.pasien.list');
-    Route::get('/rekam-medis-dokter', [RekamMedisController::class, 'viewMedisDokter'])->name('rekam-medis.dokter.list');
+    Route::get('/rekam-medis-pasien', [RekamMedisController::class, 'showByPasien'])->name('rekam-medis.pasien.list');
+    Route::get('/rekam-medis-dokter', [RekamMedisController::class, 'showByDokter'])->name('rekam-medis.dokter.list');
 
     Route::get('/create-rekam-medis', [RekamMedisController::class, 'viewCreate'])->name('rekam-medis.create');
     Route::post('/add-rekam-medis', [RekamMedisController::class, 'create'])->name('rekam-medis.add');
+
+        
 });
 
 Route::middleware('auth')->group(function () {
